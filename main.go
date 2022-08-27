@@ -3,10 +3,16 @@ package main
 import (
 	"GoProjedct/db"
 	"GoProjedct/handle"
-	"net/http"
-
+	"GoProjedct/log"
 	"github.com/labstack/echo/v4"
+	"net/http"
+	"os"
 )
+
+func init() {
+	os.Setenv("APP_NAME", "Github")
+	log.InitLogger(false)
+}
 
 func main() {
 	sql := &db.Sql{
@@ -17,8 +23,9 @@ func main() {
 		DbName:   "golang",
 	}
 	sql.Connect()
-
 	defer sql.Close()
+
+	log.Error("this is error")
 
 	e := echo.New()
 	e.GET("/", welcome)
