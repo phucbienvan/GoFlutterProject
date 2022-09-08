@@ -2,10 +2,9 @@ package handler
 
 import (
 	"GoProjedct/model"
-	req2 "GoProjedct/model/req"
+	"GoProjedct/model/req"
 	"GoProjedct/repository"
 	"GoProjedct/security"
-	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
@@ -17,7 +16,7 @@ type UserHandler struct {
 }
 
 func (u UserHandler) SignUp(c echo.Context) error {
-	req := req2.ReqSignup{}
+	req := req.ReqSignUp{}
 
 	if err := c.Bind(&req); err != nil {
 		log.Error(err.Error())
@@ -28,9 +27,7 @@ func (u UserHandler) SignUp(c echo.Context) error {
 		})
 	}
 
-	validate := validator.New()
-
-	if err := validate.Struct(validate); err != nil {
+	if err := c.Validate(req); err != nil {
 		log.Error(err.Error())
 		return c.JSON(http.StatusBadRequest, model.Response{
 			StatusCode: http.StatusBadRequest,
@@ -41,12 +38,12 @@ func (u UserHandler) SignUp(c echo.Context) error {
 
 	hash := security.HashAndSalt([]byte(req.Password))
 	role := model.MEMBER.String()
-	userId, err := uuid.NewUUID()
 
+	userId, err := uuid.NewUUID()
 	if err != nil {
 		log.Error(err.Error())
-		return c.JSON(http.StatusBadRequest, model.Response{
-			StatusCode: http.StatusBadRequest,
+		return c.JSON(http.StatusForbidden, model.Response{
+			StatusCode: http.StatusForbidden,
 			Message:    err.Error(),
 			Data:       nil,
 		})
@@ -60,10 +57,20 @@ func (u UserHandler) SignUp(c echo.Context) error {
 		Role:     role,
 		Token:    "",
 	}
+
 	user, err = u.UserRepo.SaveUser(c.Request().Context(), user)
 	if err != nil {
 		return c.JSON(http.StatusConflict, model.Response{
 			StatusCode: http.StatusConflict,
+			Message:    err.Error(),
+			Data:       nil,
+		})
+	}
+
+	if err != nil {
+		log.Error(err)
+		return c.JSON(http.StatusInternalServerError, model.Response{
+			StatusCode: http.StatusInternalServerError,
 			Message:    err.Error(),
 			Data:       nil,
 		})

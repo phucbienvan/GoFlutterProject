@@ -8,3 +8,16 @@ time="2022-08-30T02:02:11.721598+07:00" level=error msg="this is error" file=/Us
 time="2022-08-30T02:02:18.429786+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
 time="2022-08-30T02:02:26.244387+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
 time="2022-08-30T02:02:38.690568+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
+time="2022-08-30T02:33:31.855441+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
+time="2022-08-30T02:36:23.226848+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:37:51.653862+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:39:50.779834+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:42:56.809489+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:43:28.041703+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:47:41.969736+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:47:53.612372+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
+time="2022-08-30T02:48:55.037495+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:50:29.311332+07:00" level=error msg="pq: duplicate key value violates unique constraint \"users_email_key\"" file=/Users/phucbienvan/GolandProjects/GoProjedct/repository/repo_impl/user_repo_impl.go line=34
+time="2022-08-30T02:53:44.489145+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:54:34.415774+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
+time="2022-08-30T02:58:38.972247+07:00" level=error msg="this is error" file=/Users/phucbienvan/GolandProjects/GoProjedct/main.go line=30
